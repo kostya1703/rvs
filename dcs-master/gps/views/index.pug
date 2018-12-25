@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  div(id='log')
+  p Welcome to GPS
+  script(src='/public/javascripts/gps.js')
+  div#resizableFrame.w3-display-right.w3-margin-right(style="height:30%;width:30%;overflow:hidden; padding-bottom: 20px;" +
+  " padding-right: 20px;")
+    h1 Чат
+    div#users1(style="width: 70%; height: 50%; border:1.5px solid #000000;" +
+    "font:16px/26px Georgia, Garamond, Serif;overflow-y: scroll; overflow-x: hidden")

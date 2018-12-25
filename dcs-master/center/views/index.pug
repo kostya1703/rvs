@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  header.w3-container.w3-black
+     h2.w3-center Center
+  body
+
+    .w3-container
+      .w3-dropdown-click
+        button#Menubut.w3-button.w3-hover-white.w3-black.w3-border(style= "width:320px",onmouseover='myFunction()') Menu
+        #Menu.w3-dropdown-content.w3-bar-block.w3-border
+          button.w3-bar-item.w3-hover-white.w3-black.w3-border(style= "width:320px",onclick='appp()') Start / Stop tracking
+          button.w3-bar-item.w3-hover-white.w3-black.w3-border(style= "width:320px",onclick="$('#modal1').css('display', 'block')") Detected enemies
+    script.
+        function myFunction() {
+            var x = document.getElementById("Menu");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+  div#resizableFrame.w3-display-right.w3-margin-right(style="height:30%;width:30%;overflow:hidden; padding-bottom: 20px;" +
+    " padding-right: 20px;")
+    h1 Reports
+    div#users(style="width: 70%; height: 50%; border:1.5px solid #000000;" +
+    "font:16px/26px Georgia, Garamond, Serif;overflow-y: scroll; overflow-x: hidden")
+
+  div#modal1.w3-modal
+    div.w3-modal-content.w3-card-4.w3-animate-zoom(style="max-width:600px")
+      header.w3-container.w3-black
+        span.w3-button.w3-display-topright(onclick="$('#modal1').css('display', 'none')") &times;
+        h2.w3-center Detected enemies
+        div#enemies(style="width: 70%; height: 50%; border:1.5px solid #000000;" +
+        "font:16px/26px Georgia, Garamond, Serif;overflow-y: scroll; overflow-x: hidden")
+
+
+  script(src='/public/javascripts/appp.js')
+  script(src='sockets.js')
+  script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")

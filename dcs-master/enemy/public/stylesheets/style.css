@@ -1,0 +1,21 @@
+body {
+  background: #1bb8a9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #1bb8a9, #7698c2);
+  background: -moz-linear-gradient(right, #1bb8a9, #74afc2);
+  background: -o-linear-gradient(right, #1bb8a9, #4188c2);
+  background: linear-gradient(to left, #1bb8a9, #3188c2);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.overlay-full {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-position-x: center;
+  background-position-y: center;
+
+  background-size: 100%; /* Расширение фона современными браузерами */
+}
